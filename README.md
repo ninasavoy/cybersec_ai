@@ -90,3 +90,16 @@ Use o arquivo `teste-hijack.html` para verificar a detecção de hijacking:
 ```bash
 # Abra o arquivo no navegador com a extensão ativada
 # Verifique os logs no console e no popup da extensão
+```
+
+## Contribuindo
+
+Este é um projeto acadêmico desenvolvido para demonstrar conceitos avançados de segurança e privacidade web.
+
+## Licença
+
+Projeto desenvolvido para fins educacionais - Avaliação Intermediária de Cybersegurança.
+
+# Autora
+
+Desenvolvido como parte da Avaliação Intermediária - Nina Savoy de Sá
