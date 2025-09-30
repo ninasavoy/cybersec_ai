@@ -1,10 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>AntiRastreamento</title>
+  <meta charset="UTF-8">
+  <title>Guarda de Privacidade</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h2>AntiRastreamento - Conceito C</h2>
-  <p>Verifique o console (background e da aba) para logs.</p>
+  <div class="container">
+    <header>
+      <h1>Guarda de Privacidade</h1>
+      <p class="version">Proteção Avançada</p>
+    </header>
+
+    <main>
+      <!-- Score -->
+      <section class="score-section">
+        <div class="score-display">
+          <div class="score-value" id="scoreValue">0</div>
+          <div class="score-label">Score de Privacidade</div>
+        </div>
+        <div class="privacy-level" id="privacyLevel">
+          <span class="level-text">Nível: Seguro</span>
+        </div>
+      </section>
+
+      <!-- Estatísticas -->
+      <section class="stats-section">
+        <h2>📊 Estatísticas da Sessão</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">🍪</div>
+            <div class="stat-info">
+              <div class="stat-value" id="cookiesCount">0</div>
+              <div class="stat-label">Cookies Bloqueados</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🌐</div>
+            <div class="stat-info">
+              <div class="stat-value" id="connectionsCount">0</div>
+              <div class="stat-label">Conexões Bloqueadas</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🎭</div>
+            <div class="stat-info">
+              <div class="stat-value" id="fingerprintCount">0</div>
+              <div class="stat-label">Fingerprints Bloqueados</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">⚠️</div>
+            <div class="stat-info">
+              <div class="stat-value" id="hijackCount">0</div>
+              <div class="stat-label">Hijacks Detectados</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Controles -->
+      <section class="controls-section">
+        <h2>Controles</h2>
+        <div class="control-item">
+          <label class="switch">
+            <input type="checkbox" id="blockThirdParty">
+            <span class="slider"></span>
+          </label>
+          <span class="control-label">Bloquear cookies de terceiros</span>
+        </div>
+        <div class="control-item">
+          <label class="switch">
+            <input type="checkbox" id="blockFingerprint">
+            <span class="slider"></span>
+          </label>
+          <span class="control-label">Proteção anti-fingerprint</span>
+        </div>
+        <div class="control-item">
+          <label class="switch">
+            <input type="checkbox" id="blockHijack">
+            <span class="slider"></span>
+          </label>
+          <span class="control-label">Proteção anti-hijacking</span>
+        </div>
+        <div class="control-item">
+          <label class="switch">
+            <input type="checkbox" id="enableNotifications">
+            <span class="slider"></span>
+          </label>
+          <span class="control-label">Notificações de ameaças</span>
+        </div>
+      </section>
+
+      <!-- Rastreadores -->
+      <section class="domains-section">
+        <h2>Rastreadores Detectados</h2>
+        <div class="domains-list" id="domainsList">
+          <p class="no-data">Nenhum rastreador detectado ainda...</p>
+        </div>
+      </section>
+
+      <!-- Whitelist -->
+      <section class="whitelist-section">
+        <h2>Whitelist</h2>
+        <div class="input-group">
+          <input type="text" id="whitelistInput" placeholder="exemplo.com">
+          <button id="addWhitelist" class="btn-primary">Adicionar</button>
+        </div>
+        <div class="whitelist-items" id="whitelistItems">
+          <p class="no-data">Nenhum domínio na whitelist</p>
+        </div>
+      </section>
+
+      <!-- Ações -->
+      <section class="actions-section">
+        <button id="exportData" class="btn-secondary">Exportar Relatório</button>
+        <button id="clearData" class="btn-danger">Limpar Dados</button>
+        <button id="resetScore" class="btn-warning">Resetar Score</button>
+      </section>
+
+      <!-- Logs -->
+      <section class="logs-section">
+        <h2>Atividade Recente</h2>
+        <div class="logs-container" id="logsContainer">
+          <p class="no-data">Nenhuma atividade registrada</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Desenvolvido para proteção máxima de privacidade</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
 </body>
 </html>

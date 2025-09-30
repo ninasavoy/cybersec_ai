@@ -1,13 +1,20 @@
 {
   "manifest_version": 2,
-  "name": "AntiRastreamento",
-  "version": "2.1",
-  "description": "Detecta conexões, cookies, storage, hijacking, fingerprint e pontua privacidade.",
+  "name": "Guarda de Privacidade",
+  "version": "3.0",
+  "description": "Detecta rastreadores, cookies e possíveis violações de privacidade.",
+  "author": "Nina Savoy de Sá",
+  "icons": {
+    "48": "icon.png",
+    "96": "icon.png"
+  },
   "permissions": [
     "webRequest",
     "webRequestBlocking",
     "cookies",
     "storage",
+    "tabs",
+    "notifications",
     "<all_urls>"
   ],
   "background": {
@@ -17,10 +24,18 @@
     {
       "matches": ["<all_urls>"],
       "js": ["content.js"],
-      "run_at": "document_start"
+      "run_at": "document_start",
+      "all_frames": true
     }
   ],
   "browser_action": {
-    "default_popup": "popup.html"
-  }
+    "default_popup": "popup.html",
+    "default_title": "Guarda de Privacidade",
+    "default_icon": {
+      "48": "icon.png"
+    }
+  },
+  "web_accessible_resources": [
+    "icon.png"
+  ]
 }
