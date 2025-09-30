@@ -1,7 +1,7 @@
 # Guarda de Privacidade - Extensão de Navegador
 ### Nina Savoy de Sá
 
-## 📋 Descrição
+## Descrição
 
 **Guarda de Privacidade** é uma extensão de navegador avançada desenvolvida para fornecer proteção máxima contra rastreamento online, fingerprinting, hijacking e outras técnicas invasivas de coleta de dados.
 
