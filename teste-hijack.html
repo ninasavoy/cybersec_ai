@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teste Hijacking</title>
+</head>
+<body>
+  <h1>Teste de hijacking</h1>
+
+  <!-- Script que injeta comportamento suspeito -->
+  <script>
+    // tenta redirecionar usuário
+    document.body.setAttribute("onload", "javascript:alert('Hijack detectado!')");
+  </script>
+</body>
+</html>
