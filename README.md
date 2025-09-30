@@ -1,49 +1,49 @@
-# Guarda de Privacidade - Extensão de Navegador
+# Guarda de Privacidade
 ### Nina Savoy de Sá
 
-## Descrição
+Extensão de navegador desenvolvida para **proteger sua privacidade online** contra rastreadores, fingerprinting, hijacking e outras técnicas de monitoramento.  
+Este projeto foi criado como parte de um trabalho de **Cybersegurança**.
 
-**Guarda de Privacidade** é uma extensão de navegador avançada desenvolvida para fornecer proteção máxima contra rastreamento online, fingerprinting, hijacking e outras técnicas invasivas de coleta de dados.
+## Funcionalidades
 
-## Sistema de Pontuação
+- **Bloqueio de Cookies de Terceiros**  
+  Impede que sites usem cookies para rastrear sua navegação.
 
-O **Score de Privacidade** é calculado com base nas ameaças detectadas:
+- **Proteção Anti-Fingerprinting**  
+  Neutraliza tentativas de coleta de informações como:
+  - Canvas
+  - WebGL
+  - AudioContext
+  - Font Fingerprinting
+  - Hardware/Memory Fingerprint
+  - Battery API
 
-| Evento | Pontos |
-|--------|--------|
-| Cookie de terceiro detectado | +1 |
-| Rastreador bloqueado | +2 |
-| Sincronismo de cookie | +2 |
-| Fingerprinting detectado | +3 |
-| Hijacking detectado | +5 |
+- **Proteção Anti-Hijacking**  
+  Detecta e bloqueia:
+  - Injeções maliciosas de `setAttribute` e `addEventListener`
+  - Redirecionamentos suspeitos (`window.location`)
+  - Scripts inline maliciosos
+  - Iframes de terceiros
 
-### Níveis de Privacidade
+- **Monitoramento em Tempo Real**  
+  Interface popup que exibe estatísticas de:
+  - Cookies bloqueados
+  - Conexões bloqueadas
+  - Fingerprints neutralizados
+  - Hijacks detectados
 
-- **0-10 pontos**: Excelente (Verde)  
-- **11-30 pontos**: Bom (Azul)  
-- **31-60 pontos**: Moderado (Laranja)  
-- **60+ pontos**: Alto Risco (Vermelho)  
+- **Whitelist Personalizável**  
+  Adicione domínios confiáveis que não devem ser bloqueados.
 
-## Instalação
+- **Relatórios Exportáveis**  
+  Exporte logs em formato JSON para auditoria.
 
-### Firefox
+- **Notificações**  
+  Receba alertas imediatos sobre ameaças detectadas.
 
-1. Abra o Firefox  
-2. Digite `about:debugging` na barra de endereços  
-3. Clique em "Este Firefox"  
-4. Clique em "Carregar extensão temporária"  
-5. Selecione o arquivo `manifest.json` do projeto  
-
-### Chrome/Edge
-
-1. Abra `chrome://extensions/`  
-2. Ative o "Modo do desenvolvedor"  
-3. Clique em "Carregar sem compactação"  
-4. Selecione a pasta do projeto  
 
 ## Estrutura do Projeto
-
-cyber_ai/
+cyber-ai/
 ├── manifest.json # Configuração da extensão
 ├── background.js # Script de background (lógica de bloqueios, cookies, notificações)
 ├── content.js # Script de conteúdo (anti-hijacking e anti-fingerprinting)
@@ -54,52 +54,35 @@ cyber_ai/
 ├── README.md # Esta documentação
 └── teste-hijack.html # Página de teste para hijacking
 
+## Instalação
 
-> **Nota:** O `background.js` é responsável pelo gerenciamento do score, bloqueio de rastreadores e cookies, enquanto o `content.js` lida com detecção de hijacking, fingerprinting e manipulação direta da página.
+1. Clone ou baixe este repositório:
+   ```bash
+   git clone https://github.com/ninasavoy/cybersec_ai.git
+   ```
 
-## Como Usar
+2. Abra o navegador (Firefox ou Chrome).
 
-### 1. Visualizar Estatísticas
-- Clique no ícone da extensão na barra de ferramentas
-- Visualize o score de privacidade e estatísticas em tempo real
+3. Vá até o menu de extensões:
 
-### 2. Configurar Proteções
-- Ative/desative proteções específicas:
-  - Bloqueio de cookies de terceiros
-  - Proteção anti-fingerprint
-  - Proteção anti-hijacking
-  - Notificações
+4. Firefox: about:debugging#/runtime/this-firefox
 
-### 3. Gerenciar Whitelist
-- Digite um domínio no campo de whitelist
-- Clique em "Adicionar" para permitir o domínio
-- Clique no "×" para remover da whitelist
+5. Chrome: chrome://extensions/
 
-### 4. Exportar Relatório
-- Clique em "Exportar Relatório"
-- Um arquivo JSON será baixado com todas as estatísticas
+6. Clique em Carregar extensão sem compactação e selecione a pasta do projeto.
 
-### 5. Limpar Dados
-- "Limpar Dados": Remove todas as estatísticas  
-- "Reset Score": Reseta apenas o score de privacidade  
+O ícone 🛡️ aparecerá na barra do navegador.
 
-## Testes
+## Interface
 
-Use o arquivo `teste-hijack.html` para verificar a detecção de hijacking:
+Score de Privacidade: indica seu nível atual de proteção.
 
-```bash
-# Abra o arquivo no navegador com a extensão ativada
-# Verifique os logs no console e no popup da extensão
-```
+Estatísticas da Sessão: mostra cookies, conexões, fingerprints e hijacks bloqueados.
 
-## Contribuindo
+Controles: ativa/desativa proteções em tempo real.
 
-Este é um projeto acadêmico desenvolvido para demonstrar conceitos avançados de segurança e privacidade web.
+Whitelist: permite configurar domínios confiáveis.
 
-## Licença
+Logs Recentes: registra atividades suspeitas.
 
-Projeto desenvolvido para fins educacionais - Avaliação Intermediária de Cybersegurança.
 
-# Autora
-
-Desenvolvido como parte da Avaliação Intermediária - Nina Savoy de Sá
